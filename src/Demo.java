@@ -22,7 +22,7 @@ public class Demo {
         Collections.sort(producten);
         System.out.println("Gesorteerd op prijs: " + producten);
 
-        producten.sort(new ProductComparator());
+        producten.sort(new ProductNameComparator());
         System.out.println("Gesorteerd op naam: " + producten);
     }
 }
@@ -94,7 +94,7 @@ class Product implements Comparable<Product> {
     }
 }
 
-class ProductComparator implements Comparator<Product> {
+class ProductNameComparator implements Comparator<Product> {
     @Override
     public int compare(Product p1, Product p2) {
         return p1.getNaam().compareTo(p2.getNaam());
