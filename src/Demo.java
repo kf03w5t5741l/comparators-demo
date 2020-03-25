@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.Objects;
+import java.util.*;
 
 public class Demo {
     public static void main(String[] args) {
@@ -21,6 +18,12 @@ public class Demo {
         for (Product p : producten) {
             System.out.println(p.naam + ">>" + p.prijs);
         }
+
+        Collections.sort(producten);
+        System.out.println("Gesorteerd op prijs: " + producten);
+
+        producten.sort(new ProductComparator());
+        System.out.println("Gesorteerd op naam: " + producten);
     }
 }
 
@@ -83,6 +86,11 @@ class Product implements Comparable<Product> {
     @Override
     public int hashCode() {
         return Objects.hash(this.naam, this.prijs);
+    }
+
+    @Override
+    public String toString() {
+        return this.naam + ">>" + this.prijs;
     }
 }
 
