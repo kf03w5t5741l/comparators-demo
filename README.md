@@ -1,2 +1,0 @@
-# Comparators demo
-Classroom demo.
